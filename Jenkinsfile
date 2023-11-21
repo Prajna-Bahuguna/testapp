@@ -35,7 +35,7 @@ pipeline {
                     // Assuming you have SSH key-based authentication to the Helm server
                     sshagent(['HELM_SERVER_SSH_CREDENTIALS']) {
                         // Replace 'helm-server-user' and 'helm-server-ip' with your Helm server details
-                        sh "ssh ec2-user@54.175.148.89 'helm upgrade ${HELM_RELEASE_NAME} ${HELM_CHART_PATH} --install --set image.repository=prajnab9/myapp --set image.tag=${BUILD_NUMBER}'"
+                        sh "ssh ec2-user@172.16.2.135 'helm upgrade ${HELM_RELEASE_NAME} ${HELM_CHART_PATH} --install --set image.repository=prajnab9/myapp --set image.tag=${BUILD_NUMBER}'"
                     }
                 }
             }
